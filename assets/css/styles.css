@@ -8,9 +8,7 @@ header {
     padding: 10px;
 }
 
-#quiz-start,
-#quiz-going,
-#quiz-done {
+body div {
     display: flex;
     flex-flow: column wrap;
     width: 600px;
@@ -32,4 +30,8 @@ header {
 
 button {
     margin: auto;
+}
+
+.display-none {
+    display: none;
 }
