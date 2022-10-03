@@ -11,15 +11,15 @@
 <body>
     <header>
         <h2>View high scores</h2>
-        <h2>Time: temp</h2>
+        <h2 id="timer">Time: temp</h2>
     </header>
     <div id = "quiz-start">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalie your score/time by ten seconds!</p>
-        <button>Start Quiz</button>
+        <button id="start">Start Quiz</button>
     </div>
     <div id="quiz-going">
-        <h1>This is the location for each question!</h1>
+        <h1 id="question">This is the location for each question!</h1>
         <button class="choice" data-choice="0">Choice 1</button>
         <button class="choice" data-choice="1">Choice 2</button>
         <button class="choice" data-choice="2">Choice 3</button>
@@ -27,7 +27,7 @@
     </div>
     <div id="quiz-done">
         <h1>All Done!</h1>
-        <p>Your final score is 22.</p>
+        <p>Your final score is REPLACE.</p>
         <form>
             <label for="initials">Enter Initials: </label>
             <input type="text" name="initials" id="initials">
