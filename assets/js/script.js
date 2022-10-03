@@ -38,11 +38,15 @@ var choiceButtonsElements = document.querySelectorAll(".choice");
 var startButtonElement = document.querySelector("#start");
 var timerElement = document.querySelector("#timer");
 var questionDivElement = document.querySelector("#quiz-going");
+var form = document.querySelector("form");
 
 var currentQuestion = 0;
-var correctQuestions = 0;
+var currentScore = 0;
 var timeLeft = 0;
 var quizDone = false;
+
+var finalTime;
+var finalScore;
 // start button begins timer
     // with timer started, hide the quiz-begin div and show the quiz-going div
     // replace elements in quiz-begun div with first question
@@ -73,14 +77,26 @@ startButtonElement.addEventListener('click', function () {
 choiceButtonsElements.forEach(function (element) {
     element.addEventListener('click', function() {
         if(element.getAttribute("data-choice") == questions[currentQuestion]?.answerIndex) {
-            console.log("THATS RIGHT!")
+            ++currentScore;
         } else {
             console.log("THATS WRONG!")
         }
         if(currentQuestion == questions.length-1) {
             questionDivElement.classList.add("display-none")
+            finalScore = currentScore;
+            finalTime = timeLeft;
+            console.log(`Finale Score was ${finalScore} with ${finalTime} seconds left`);
+
+            currentScore = 0;
+            timeLeft = 0;
+
+        } else {
+            ++currentQuestion;
+            questionElement.textContent = questions[currentQuestion].question;
+            choiceButtonsElements.forEach(function (e, i){
+                e.textContent = questions[currentQuestion].choices[i];
+            });
         }
-        ++currentQuestion;
     });
 });
 // Let user enter initials to save their score for the leader boards 
