@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#quiz-start,
+#quiz-going,
+#quiz-done {
+    display: flex;
+    flex-flow: column wrap;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#quiz-start {
+    background-color: red;
+    /* display: none; */
+}
+
+#quiz-going {
+    background-color: blue;
+}
+
+#quiz-done {
+    background-color: green;
+}
+
+button {
+    margin: auto;
+}

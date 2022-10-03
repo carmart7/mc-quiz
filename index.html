@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Quiz</title>
 </head>
@@ -12,5 +13,26 @@
         <h2>View high scores</h2>
         <h2>Time: temp</h2>
     </header>
+    <div id = "quiz-start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalie your score/time by ten seconds!</p>
+        <button>Start Quiz</button>
+    </div>
+    <div id="quiz-going">
+        <h1>This is the location for each question!</h1>
+        <button class="choice">Choice 1</button>
+        <button class="choice">Choice 2</button>
+        <button class="choice">Choice 3</button>
+        <button class="choice">Choice 3</button>
+    </div>
+    <div id="quiz-done">
+        <h1>All Done!</h1>
+        <p>Your final score is 22.</p>
+        <form>
+            <label for="initials">Enter Initials: </label>
+            <input type="text" name="initials" id="initials">
+            <input type="submit" id="submit-initials">
+        </form>
+    </div>
 </body>
 </html>
