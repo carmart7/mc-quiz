@@ -2,10 +2,30 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #f0ece2;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+}
+
+h1 {
+    font-size: 250%
+}
+
+h2 {
+    font-size: 200%;
+}
+
+p {
+    font-size: 150%;
 }
 
 body div {
@@ -14,26 +34,46 @@ body div {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
+}
+
+body h2,
+body h1,
+body p{
+    margin-bottom: 10px;
+    
 }
 
 #quiz-start {
-    background-color: red;
+    text-align: center;
 }
 
 #quiz-going {
-    background-color: blue;
+    text-align: center;
 }
 
 #quiz-done {
-    background-color: green;
 }
 
 #scoreboard {
-    background-color: pink;
 }
 
 button {
     margin: auto;
+    font-size: 175%;
+
+}
+
+div button {
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+div button:hover {
+    background-color: rgb(180, 144, 98);
+
 }
 
 .display-none {

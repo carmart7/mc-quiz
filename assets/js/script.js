@@ -3,32 +3,72 @@
     // choice buttons - selects all choice buttons
 var questions = [
     {
-        question: "How did the chicken cross the road",
+        question: "Does local storage get reset after refreshing the page?",
         choices: [
-            "Space ship",
-            "Uber",
-            "It didn't",
-            "Teleported"
+            "Yes",
+            "Sometimes",
+            "No",
+            "All of the above"
         ],
         answerIndex: 2
     },
     {
-        question: "How did the alien cross the road",
+        question: "Can a user modify local storage?",
         choices: [
-            "Space ship",
-            "Uber",
-            "It didn't",
-            "Teleported"
+            "Yes",
+            "No",
+            "Only if dev allows",
+            "All of the above"
         ],
         answerIndex: 0
     },
     {
-        question: "How did the enderman cross the road",
+        question: "Which of the following IS NOT an array method?",
         choices: [
-            "Space ship",
-            "Uber",
-            "It didn't",
-            "Teleported"
+            "pop",
+            "find",
+            "map",
+            "backwards"
+        ],
+        answerIndex: 3
+    },
+    {
+        question: "Which of the following IS an array method?",
+        choices: [
+            "deleteAll",
+            "deleteFirst",
+            "giveSum",
+            "None of the above"
+        ],
+        answerIndex: 3
+    },
+    {
+        question: "Which of the following is a string method?",
+        choices: [
+            "slice",
+            "substr",
+            "replace",
+            "All of the above"
+        ],
+        answerIndex: 3
+    },
+    {
+        question: "Is javascript the only language that can be used on a website?",
+        choices: [
+            "Yes",
+            "No",
+            "Sometimes",
+            "None of the above"
+        ],
+        answerIndex: 1
+    },
+    {
+        question: "Which of the following can be used to delcare a variable?",
+        choices: [
+            "var",
+            "let",
+            "const",
+            "All of the above"
         ],
         answerIndex: 3
     }
@@ -53,7 +93,7 @@ var scoreList = document.querySelector('ol');
 var currentQuestion = 0;
 var currentScore = 0;
 var timeLeft = 0;
-var quizDone = false;
+var quizDone = true;
 
 var finalTime;
 var finalScore;
@@ -63,11 +103,13 @@ var finalScore;
 startButtonElement.addEventListener('click', function(){
     timeLeft = 15;
     timerElement.textContent = `Time: ${timeLeft}`;
+    quizDone = false;
     var timeInterval = setInterval(function() {
-        if(timeLeft > 0){
+        if(timeLeft > 1){
             --timeLeft;
             timerElement.textContent = `Time: ${timeLeft}`;
-        }else if(timeLeft === 0){
+        }else if(timeLeft <= 1 && quizDone === false){
+            exitQuiz();
             clearInterval(timeInterval);
         }
     }, 1000);
@@ -91,21 +133,12 @@ choiceButtonsElements.forEach(function (element) {
     element.addEventListener('click', function() {
         if(element.getAttribute("data-choice") == questions[currentQuestion]?.answerIndex) { //if choice chosen is correct
             ++currentScore;
-        } else { 
+        } else { //lower time because of incorrect answer
             timeLeft = timeLeft - 5;
         }
 
         if((currentQuestion == questions.length-1) || (timeLeft <= 0)) {
-            displayNone(questionDivElement);
-            finalScore = currentScore;
-            finalTime = timeLeft;
-            console.log(`Finale Score was ${finalScore} with ${finalTime} seconds left`);
-            timeLeft = 0;
-            currentQuestion = 0;
-            currentScore = 0;
-            timerElement.textContent = `Time: ${timeLeft}`;
-            doneMessageElement.textContent = `Your final score is ${finalScore}.`;
-            displayShow(doneDivElement);
+            exitQuiz();
         } else {
             ++currentQuestion;
             questionElement.textContent = questions[currentQuestion].question;
@@ -193,4 +226,18 @@ function displayShow(element){
 
 function displayNone(element){
     element.classList.add('display-none')
+}
+
+function exitQuiz(){
+    quizDone = true;
+    displayNone(questionDivElement);
+    finalScore = currentScore;
+    finalTime = timeLeft;
+    console.log(`Final Score was ${finalScore} with ${finalTime} seconds left`);
+    timeLeft = 0;
+    currentQuestion = 0;
+    currentScore = 0;
+    timerElement.textContent = `Time: ${timeLeft}`;
+    doneMessageElement.textContent = `Your final score is ${finalScore}.`;
+    displayShow(doneDivElement);
 }
