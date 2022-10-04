@@ -76,6 +76,25 @@ div button:hover {
 
 }
 
+input[type=text] {
+    background-color: #f0ece2;
+}
+
+input[type=submit] {
+    background-color: burlywood;
+    border-color:  #f0ece2;
+}
+
+ol {
+    margin-bottom: 10px;
+}
+
+ol li {
+    background-color: #e2d8bd;
+    font-size: 150%;
+    padding: 5px;
+}
+
 .display-none {
     display: none;
 }
