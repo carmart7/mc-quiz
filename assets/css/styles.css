@@ -52,12 +52,6 @@ body p{
     text-align: center;
 }
 
-#quiz-done {
-}
-
-#scoreboard {
-}
-
 button {
     margin: auto;
     font-size: 175%;
@@ -68,7 +62,7 @@ div button {
     width: 200px;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: burlywood;
+    background-color: rgb(224, 191, 147);
 }
 
 div button:hover {
@@ -81,8 +75,12 @@ input[type=text] {
 }
 
 input[type=submit] {
-    background-color: burlywood;
+    background-color: rgb(224, 191, 147);
     border-color:  #f0ece2;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(223, 186, 139);
 }
 
 ol {

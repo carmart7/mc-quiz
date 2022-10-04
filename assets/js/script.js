@@ -163,13 +163,11 @@ form.addEventListener('submit', function(e){
     if(initials) {
         displayNone(doneDivElement);
         displayShow(scoreboardDivElement);
-        console.log(userScore);
         if(scores) {
             scores.push(userScore);
         } else {
             scores = [userScore];
         }
-        console.log(scores);
         localStorage.setItem("scores", JSON.stringify(scores));
         displayNone(doneDivElement);
         displayShow(scoreboardDivElement);
@@ -233,7 +231,6 @@ function exitQuiz(){
     displayNone(questionDivElement);
     finalScore = currentScore;
     finalTime = timeLeft;
-    console.log(`Final Score was ${finalScore} with ${finalTime} seconds left`);
     timeLeft = 0;
     currentQuestion = 0;
     currentScore = 0;
