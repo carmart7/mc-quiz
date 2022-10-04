@@ -10,29 +10,37 @@
 </head>
 <body>
     <header>
-        <h2>View high scores</h2>
-        <h2 id="timer">Time: temp</h2>
+        <h2 id="view-high">View high scores</h2>
+        <h2 id="timer">Time: 0</h2>
     </header>
-    <div id = "quiz-start">
+    <div id ="quiz-start">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalie your score/time by ten seconds!</p>
         <button id="start">Start Quiz</button>
     </div>
-    <div id="quiz-going">
+    <div id="quiz-going" class="display-none">
         <h1 id="question">This is the location for each question!</h1>
         <button class="choice" data-choice="0">Choice 1</button>
         <button class="choice" data-choice="1">Choice 2</button>
         <button class="choice" data-choice="2">Choice 3</button>
         <button class="choice" data-choice="3">Choice 4</button>
     </div>
-    <div id="quiz-done">
+    <div id="quiz-done" class="display-none">
         <h1>All Done!</h1>
-        <p>Your final score is REPLACE.</p>
+        <p id="done-message">Your final score is REPLACE.</p>
         <form>
             <label for="initials">Enter Initials: </label>
             <input type="text" name="initials" id="initials">
             <input type="submit" id="submit-initials">
         </form>
+    </div>
+    <div id="scoreboard" class="display-none">
+        <h1>High Scores</h1>
+        <ol id="scoreboard-list">
+            <li></li>
+        </ol>
+        <button id="back-button">Go back</button>
+        <button id="clear-button">Clear high scores</button>
     </div>
     <script src="./assets/js/script.js"></script>
 </body>

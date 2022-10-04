@@ -28,6 +28,10 @@ body div {
     background-color: green;
 }
 
+#scoreboard {
+    background-color: pink;
+}
+
 button {
     margin: auto;
 }
